@@ -68,7 +68,7 @@ func main() {
 		PrintSudoku(puzzle)
 		fmt.Println()
 	} else {
-		fmt.Println("This puzzle has no solution.\n")
+		fmt.Println("This puzzle has no solution.")
 	}
 
 }
