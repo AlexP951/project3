@@ -1,3 +1,10 @@
+/**
+*
+* Alex Pearle
+* Isaac Schiffer (isaac.s.schiffer@vanderbilt.edu)
+* Brantley Payne (brantley.k.payne@vanderbilt.edu)
+*
+*/
 package main
 
 import (
@@ -12,21 +19,25 @@ import (
  *
  * @param grid - the 9×9 sudoku grid to print
  */
-func PrintPuzzle(grid [][]int) {
-	fmt.Println("+-------+-------+-------+")
-	for r := 0; r < 9; r++ {
-		fmt.Print("| ")
-		for c := 0; c < 9; c++ {
-			fmt.Printf("%d ", grid[r][c])
-			if (c+1)%3 == 0 {
+func PrintSudoku(grid [][]int) {
+	line := "+-------+-------+-------+"
+	for i := 0; i < 9; i++ {
+		if i % 3 == 0 {
+			fmt.Println(line)
+		}
+		for j := 0; j < 9; j++ {
+			if j%3 == 0 {
 				fmt.Print("| ")
 			}
+			if grid[i][j] == 0 {
+				fmt.Print(". ")
+			} else {
+				fmt.Printf("%d ", grid[i][j])
+			}
 		}
-		fmt.Println()
-		if (r+1)%3 == 0 {
-			fmt.Println("+-------+-------+-------+")
-		}
+		fmt.Println("|")
 	}
+	fmt.Println(line)
 }
 
 /**
