@@ -35,6 +35,10 @@ func Solve(board [][]int) bool {
 /**
  * Checks whether placing value n at (r,c) is possible
  *
+ * @param row - wanted row
+ * @param col - wanted column
+ * @param int - number attempting to be inserted
+ * @param board - 9×9 int grid
  * @return bool - if this value can be placed at the point
  */
 func check(row, col, digit int, board [][]int) bool {
