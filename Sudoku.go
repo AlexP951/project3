@@ -9,7 +9,12 @@
 package main
 
 const size = 9
-
+/**
+ * Attempts to solve a Sudoku puzzle.
+ *
+ * @param board - 9×9 int grid
+ * @return bool - true if solved, false if no solution exists
+ */
 func Solve(board [][]int) bool {
 	for i := 0; i < size; i++ {
 		for j := 0; j < size; j++ {
@@ -29,7 +34,11 @@ func Solve(board [][]int) bool {
 	}
 	return true
 }
-
+/**
+ * Checks whether placing value n at (r,c) is possible
+ *
+ * @return bool - if this value can be placed at the point
+ */
 func check(row, col, digit int, board [][]int) bool {
 
 	for i := 0; i < size; i++ {
