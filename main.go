@@ -59,12 +59,12 @@ func main() {
 	}
 	path := filepath.Join("txt", filename)
 	puzzle := readFileIntoGrid(path)
-	fmt.Println("\nPuzzle:\n")
+	fmt.Println("Puzzle:")
 	PrintSudoku(puzzle)
 	fmt.Println()
 	solved := Solve(puzzle)
 	if solved {
-		fmt.Println("Solution:\n")
+		fmt.Println("Solution:")
 		PrintSudoku(puzzle)
 		fmt.Println()
 	} else {
