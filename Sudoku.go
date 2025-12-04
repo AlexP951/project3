@@ -2,7 +2,6 @@
  * @author
  * Alex Pearle (alex.pearle@vanderbilt.edu)
  * Isaac Schiffer (isaac.s.schiffer@vanderbilt.edu)
- * Brantley K. Payne (brantley.k.payne@vanderbilt.edu)
  *
  * Sudoku solver implementation in Go.
  */
@@ -11,16 +10,14 @@ package main
 
 const size = 9
 
-type Sudoku [size][size]int
-
-func (board *Sudoku) Solve() bool {
+func Solve(board [][]int) bool {
 	for i := 0; i < size; i++ {
 		for j := 0; j < size; j++ {
 			if board[i][j] == 0 {
 				for k := 1; k <= size; k++ {
 					if check(i, j, k, board) {
 						board[i][j] = k
-						if board.Solve() {
+						if Solve(board) {
 							return true
 						}
 						board[i][j] = 0
@@ -33,7 +30,7 @@ func (board *Sudoku) Solve() bool {
 	return true
 }
 
-func check(row, col, digit int, board *Sudoku) bool {
+func check(row, col, digit int, board [][]int) bool {
 
 	for i := 0; i < size; i++ {
 		if board[row][i] == digit {
