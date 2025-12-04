@@ -1,3 +1,9 @@
+/**
+* Alex Pearle (alexander.c.pearle@vanderbilt.edu)
+* Isaac Schiffer (isaac.s.schiffer@vanderbilt.edu)
+* Brantley Payne (brantley.k.payne@vanderbilt.edu)
+ */
+
 package main
 
 import (
