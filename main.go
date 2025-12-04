@@ -11,7 +11,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"filepath"
+	"path/filepath"
 )
 
 /**
