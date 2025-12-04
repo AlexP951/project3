@@ -47,33 +47,28 @@ func PrintSudoku(grid [][]int) {
  * - prints before + after
  */
 func main() {
-
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter puzzle filename (Press Enter for sudoku-test1.txt): ")
-	input, _ := reader.ReadString('\n')
-	input = strings.TrimSpace(input)
-
-	if input == "" {
-		input = "txt/sudoku-test1.txt"
-	} else {
-		input = "txt/" + input
+	var filename string
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("Enter puzzle text file (assumes file is in \"txt\" folder).")
+	fmt.Println("Pressing <Enter> will run the file \"sudoku-test1.txt\".")
+	if scanner.Scan() {
+		filename = scanner.Text()
 	}
-
-	grid, err := ReadPuzzle(input)
-	if err != nil {
-		fmt.Println("Error reading puzzle:", err)
-		return
+	if filename == "" {
+		filename = "sudoku-test1.txt"
 	}
-
-	fmt.Println("\nInitial puzzle:")
-	PrintPuzzle(grid)
-
-	solved := Solve(grid)
-
+	path := filepath.Join("txt", filename)
+	puzzle := readFileIntoGrid(path)
+	fmt.Println("\nPuzzle:\n")
+	PrintSudoku(puzzle)
+	fmt.Println()
+	solved := Solve(puzzle)
 	if solved {
-		fmt.Println("\nSolved puzzle:")
-		PrintPuzzle(grid)
+		fmt.Println("Solution:\n")
+		PrintSudoku(puzzle)
+		fmt.Println()
 	} else {
-		fmt.Println("This puzzle has no solution.")
+		fmt.Println("This puzzle has no solution.\n")
 	}
+
 }
