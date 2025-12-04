@@ -11,6 +11,11 @@ import (
 	"testing"
 )
 
+/**
+ * runs the solver on the first sudoku 
+ * and checks if everything matches the solution
+ * @param t
+ */
 func TestPuzzle1(t *testing.T) {
 	grid := readFileIntoGrid("txt/sudoku-test1.txt")
 	expected := readFileIntoGrid("txt/sudoku-test1-solution.txt")
@@ -28,6 +33,11 @@ func TestPuzzle1(t *testing.T) {
 	fmt.Println("Puzzle 1 solved correctly")
 }
 
+/**
+ * runs the solver on the second sudoku 
+ * and checks if everything matches the solution
+ * @param t
+ */
 func TestPuzzle2(t *testing.T) {
 	grid := readFileIntoGrid("txt/sudoku-test2.txt")
 	expected := readFileIntoGrid("txt/sudoku-test2-solution.txt")
@@ -45,6 +55,11 @@ func TestPuzzle2(t *testing.T) {
 	fmt.Println("Puzzle 2 solved correctly")
 }
 
+/**
+ * runs the solver on the impossible sudoku 
+ * and checks if everything matches the solution
+ * @param t
+ */
 func TestImpossible(t *testing.T) {
 	grid := readFileIntoGrid("txt/sudoku-impossible.txt")
 
