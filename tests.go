@@ -20,7 +20,7 @@ func TestPuzzle1(t *testing.T) {
 	for r := 0; r < 9; r++ {
 		for c := 0; c < 9; c++ {
 			if grid[r][c] != expected[r][c] {
-				t.Errorf("Incorrect Solver",
+				t.Errorf("Incorrect Solver at (%d, %d): got %d, expected %d",
 					r, c, grid[r][c], expected[r][c])
 			}
 		}
@@ -37,7 +37,7 @@ func TestPuzzle2(t *testing.T) {
 	for r := 0; r < 9; r++ {
 		for c := 0; c < 9; c++ {
 			if grid[r][c] != expected[r][c] {
-				t.Errorf("Incorrect Solver",
+				t.Errorf("Incorrect Solver at (%d, %d): got %d, expected %d",
 					r, c, grid[r][c], expected[r][c])
 			}
 		}
