@@ -13,7 +13,7 @@ import (
 
 func TestPuzzle1(t *testing.T) {
 	grid := readFileIntoGrid("txt/sudoku-test1.txt")
-	expected := readFileIntoGrid("txt/sudoku-test1-solved.txt")
+	expected := readFileIntoGrid("txt/sudoku-test1-solution.txt")
 
 	Solve(grid)
 
@@ -30,7 +30,7 @@ func TestPuzzle1(t *testing.T) {
 
 func TestPuzzle2(t *testing.T) {
 	grid := readFileIntoGrid("txt/sudoku-test2.txt")
-	expected := readFileIntoGrid("txt/sudoku-test2-solved.txt")
+	expected := readFileIntoGrid("txt/sudoku-test2-solution.txt")
 
 	Solve(grid)
 
