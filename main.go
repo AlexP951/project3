@@ -1,6 +1,6 @@
 /**
 *
-* Alex Pearle
+* Alex Pearle (alexander.c.pearle@vanderbilt.edu)
 * Isaac Schiffer (isaac.s.schiffer@vanderbilt.edu)
 * Brantley Payne (brantley.k.payne@vanderbilt.edu)
 *
@@ -26,7 +26,7 @@ func PrintSudoku(grid [][]int) {
 			fmt.Println(line)
 		}
 		for j := 0; j < 9; j++ {
-			if j%3 == 0 {
+			if j % 3 == 0 {
 				fmt.Print("| ")
 			}
 			if grid[i][j] == 0 {
