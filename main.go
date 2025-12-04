@@ -41,10 +41,7 @@ func PrintSudoku(grid [][]int) {
 }
 
 /**
- * Main program:
- * - prompts user for puzzle filename
- * - loads puzzle
- * - prints before + after
+ * Main program: prompts the user for a puzzle, then attempts to solve while printing info
  */
 func main() {
 	var filename string
