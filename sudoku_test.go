@@ -12,8 +12,8 @@ import (
 )
 
 func TestPuzzle1(t *testing.T) {
-	grid := readFileIntoGrid("txt/sudoku-test1.txt")
-	expected := readFileIntoGrid("txt/sudoku-test1-solved.txt")
+	grid := readFileIntoGrid("sudoku-test1.txt")
+	expected := readFileIntoGrid("sudoku-test1-solved.txt")
 
 	Solve(grid)
 
@@ -29,8 +29,8 @@ func TestPuzzle1(t *testing.T) {
 }
 
 func TestPuzzle2(t *testing.T) {
-	grid := readFileIntoGrid("txt/sudoku-test2.txt")
-	expected := readFileIntoGrid("txt/sudoku-test2-solved.txt")
+	grid := readFileIntoGrid("sudoku-test2.txt")
+	expected := readFileIntoGrid("sudoku-test2-solved.txt")
 
 	Solve(grid)
 
@@ -46,7 +46,7 @@ func TestPuzzle2(t *testing.T) {
 }
 
 func TestImpossible(t *testing.T) {
-	grid := readFileIntoGrid("txt/sudoku-impossible.txt")
+	grid := readFileIntoGrid("sudoku-impossible.txt")
 
 	if Solve(grid) {
 		t.Errorf("Impossible puzzle incorrectly solved")
