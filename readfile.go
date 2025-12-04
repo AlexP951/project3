@@ -2,24 +2,21 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 	"strconv"
 	"strings"
 )
 
 /**
- * Reads a text file containing a 9×9 Sudoku puzzle.
+ * Reads a text file containing a 9×9 Sudoku puzzle
  *
- * @param filename - text file containing 9 rows of 9 numbers
- * @return 2D int slice
+ * @param filename text file containing 9 rows of 9 numbers
+ * @return 2D int
  */
-func readFileIntoGrid(filename string) ([][]int, error) {
-
-	file, err := os.Open(filename)
-	if err != nil {
-		return nil, err
-	}
+func readFileIntoGrid(filename string) [][]int {
+	// opens the file and returns error if doesn't work
+	file, _ := os.Open(filename)
+	// makes sure file is closed properly
 	defer file.Close()
 
 	grid := make([][]int, 0, 9)
@@ -27,29 +24,15 @@ func readFileIntoGrid(filename string) ([][]int, error) {
 
 	for scanner.Scan() {
 		line := strings.TrimSpace(scanner.Text())
-		if line == "" {
-			continue
-		}
-
 		nums := strings.Fields(line)
-		if len(nums) != 9 {
-			return nil, fmt.Errorf("invalid puzzle row: %s", line)
-		}
 
+		// convert strings into integers
 		row := make([]int, 9)
 		for i, n := range nums {
-			val, err := strconv.Atoi(n)
-			if err != nil {
-				return nil, fmt.Errorf("non-integer: %s", n)
-			}
+			val, _ := strconv.Atoi(n)
 			row[i] = val
 		}
 		grid = append(grid, row)
 	}
-
-	if len(grid) != 9 {
-		return nil, fmt.Errorf("puzzle must contain 9 rows, found %d", len(grid))
-	}
-
-	return grid, nil
+	return grid
 }
