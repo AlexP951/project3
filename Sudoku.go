@@ -2,6 +2,7 @@
  * @author
  * Alex Pearle (alex.pearle@vanderbilt.edu)
  * Isaac Schiffer (isaac.s.schiffer@vanderbilt.edu)
+ * Brantley K. Payne (brantley.k.payne@vanderbilt.edu)
  *
  * Sudoku solver implementation in Go.
  */
